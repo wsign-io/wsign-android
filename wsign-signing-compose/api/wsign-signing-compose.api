@@ -1,0 +1,12 @@
+public final class io/wsign/signing/compose/WsignSigningLauncher {
+	public static final field $stable I
+	public final fun launch (Lio/wsign/signing/SigningRequest;)V
+	public final fun launch (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)V
+	public static synthetic fun launch$default (Lio/wsign/signing/compose/WsignSigningLauncher;Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;ILjava/lang/Object;)V
+}
+
+public final class io/wsign/signing/compose/WsignSigningLauncherKt {
+	public static final fun WsignSigningSheet (ZLjava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;Lio/wsign/signing/SigningEventListener;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V
+	public static final fun rememberWsignSigningLauncher (Lio/wsign/signing/SigningEventListener;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Lio/wsign/signing/compose/WsignSigningLauncher;
+}
+

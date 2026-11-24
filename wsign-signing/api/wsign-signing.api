@@ -1,0 +1,796 @@
+public final class io/wsign/signing/InvalidSigningUrlException : java/lang/IllegalArgumentException {
+	public fun <init> (Lio/wsign/signing/UrlValidationError;)V
+	public final fun getReason ()Lio/wsign/signing/UrlValidationError;
+}
+
+public final class io/wsign/signing/ReturnUrlMatch {
+	public fun <init> (Ljava/lang/String;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getSignatureRequestId ()Ljava/lang/String;
+	public final fun getSignerId ()Ljava/lang/String;
+	public final fun getStatus ()Lio/wsign/signing/ReturnUrlMatch$Status;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class io/wsign/signing/ReturnUrlMatch$Status {
+}
+
+public final class io/wsign/signing/ReturnUrlMatch$Status$Completed : io/wsign/signing/ReturnUrlMatch$Status {
+	public static final field INSTANCE Lio/wsign/signing/ReturnUrlMatch$Status$Completed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/ReturnUrlMatch$Status$Declined : io/wsign/signing/ReturnUrlMatch$Status {
+	public static final field INSTANCE Lio/wsign/signing/ReturnUrlMatch$Status$Declined;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/ReturnUrlMatch$Status$Other : io/wsign/signing/ReturnUrlMatch$Status {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/wsign/signing/ReturnUrlMatch$Status$Other;
+	public static synthetic fun copy$default (Lio/wsign/signing/ReturnUrlMatch$Status$Other;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/ReturnUrlMatch$Status$Other;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/ReturnUrlMatch$Status$Unspecified : io/wsign/signing/ReturnUrlMatch$Status {
+	public static final field INSTANCE Lio/wsign/signing/ReturnUrlMatch$Status$Unspecified;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/ReturnUrlPattern {
+	public static final field Companion Lio/wsign/signing/ReturnUrlPattern$Companion;
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHost ()Ljava/lang/String;
+	public final fun getPathPrefix ()Ljava/lang/String;
+	public final fun getScheme ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun matches (Ljava/lang/String;)Z
+	public static final fun parse (Ljava/lang/String;)Lio/wsign/signing/ReturnUrlPattern;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/ReturnUrlPattern$Companion {
+	public final fun parse (Ljava/lang/String;)Lio/wsign/signing/ReturnUrlPattern;
+}
+
+public final class io/wsign/signing/SigningColor {
+	public static final field BRAND Lio/wsign/signing/SigningColor;
+	public static final field Companion Lio/wsign/signing/SigningColor$Companion;
+	public fun <init> (I)V
+	public fun <init> (II)V
+	public final fun argb (Z)I
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDark ()I
+	public final fun getLight ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningColor$Companion {
+}
+
+public abstract class io/wsign/signing/SigningEvent {
+}
+
+public final class io/wsign/signing/SigningEvent$ExternalUrlOpened : io/wsign/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/wsign/signing/SigningEvent$ExternalUrlOpened;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningEvent$ExternalUrlOpened;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/SigningEvent$ExternalUrlOpened;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningEvent$IdentityVerificationStarted : io/wsign/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/wsign/signing/SigningEvent$IdentityVerificationStarted;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningEvent$IdentityVerificationStarted;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/SigningEvent$IdentityVerificationStarted;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHost ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningEvent$LoadFailed : io/wsign/signing/SigningEvent {
+	public fun <init> (Lio/wsign/signing/WsignSigningError;)V
+	public final fun component1 ()Lio/wsign/signing/WsignSigningError;
+	public final fun copy (Lio/wsign/signing/WsignSigningError;)Lio/wsign/signing/SigningEvent$LoadFailed;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningEvent$LoadFailed;Lio/wsign/signing/WsignSigningError;ILjava/lang/Object;)Lio/wsign/signing/SigningEvent$LoadFailed;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getError ()Lio/wsign/signing/WsignSigningError;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningEvent$NavigationBlocked : io/wsign/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/wsign/signing/SigningEvent$NavigationBlocked;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningEvent$NavigationBlocked;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/SigningEvent$NavigationBlocked;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningEvent$PageLoaded : io/wsign/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/wsign/signing/SigningEvent$PageLoaded;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningEvent$PageLoaded;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/SigningEvent$PageLoaded;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningEvent$PageMessage : io/wsign/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/Map;
+	public final fun copy (Ljava/lang/String;Ljava/util/Map;)Lio/wsign/signing/SigningEvent$PageMessage;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningEvent$PageMessage;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)Lio/wsign/signing/SigningEvent$PageMessage;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFields ()Ljava/util/Map;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningEvent$PageStateChanged : io/wsign/signing/SigningEvent {
+	public fun <init> (Lio/wsign/signing/SigningPageState;)V
+	public final fun component1 ()Lio/wsign/signing/SigningPageState;
+	public final fun copy (Lio/wsign/signing/SigningPageState;)Lio/wsign/signing/SigningEvent$PageStateChanged;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningEvent$PageStateChanged;Lio/wsign/signing/SigningPageState;ILjava/lang/Object;)Lio/wsign/signing/SigningEvent$PageStateChanged;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getState ()Lio/wsign/signing/SigningPageState;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningEvent$Viewed : io/wsign/signing/SigningEvent {
+	public fun <init> (Lio/wsign/signing/SigningReference;)V
+	public final fun component1 ()Lio/wsign/signing/SigningReference;
+	public final fun copy (Lio/wsign/signing/SigningReference;)Lio/wsign/signing/SigningEvent$Viewed;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningEvent$Viewed;Lio/wsign/signing/SigningReference;ILjava/lang/Object;)Lio/wsign/signing/SigningEvent$Viewed;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getReference ()Lio/wsign/signing/SigningReference;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class io/wsign/signing/SigningEventListener {
+	public abstract fun onSigningEvent (Lio/wsign/signing/SigningEvent;)V
+}
+
+public final class io/wsign/signing/SigningLink {
+	public static final field Companion Lio/wsign/signing/SigningLink$Companion;
+	public synthetic fun <init> (Ljava/lang/String;Lio/wsign/signing/SigningLink$Kind;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public static final fun check (Ljava/lang/String;)Lio/wsign/signing/SigningLink$Check;
+	public static final fun check (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)Lio/wsign/signing/SigningLink$Check;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHost ()Ljava/lang/String;
+	public final fun getKind ()Lio/wsign/signing/SigningLink$Kind;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static final fun isValid (Ljava/lang/String;)Z
+	public static final fun isValid (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)Z
+	public fun toString ()Ljava/lang/String;
+	public final fun urlFor (Lio/wsign/signing/WsignSigningConfiguration$Language;)Ljava/lang/String;
+	public static final fun validate (Ljava/lang/String;)Lio/wsign/signing/SigningLink;
+	public static final fun validate (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)Lio/wsign/signing/SigningLink;
+}
+
+public abstract class io/wsign/signing/SigningLink$Check {
+}
+
+public final class io/wsign/signing/SigningLink$Check$Invalid : io/wsign/signing/SigningLink$Check {
+	public fun <init> (Lio/wsign/signing/UrlValidationError;)V
+	public final fun component1 ()Lio/wsign/signing/UrlValidationError;
+	public final fun copy (Lio/wsign/signing/UrlValidationError;)Lio/wsign/signing/SigningLink$Check$Invalid;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningLink$Check$Invalid;Lio/wsign/signing/UrlValidationError;ILjava/lang/Object;)Lio/wsign/signing/SigningLink$Check$Invalid;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getReason ()Lio/wsign/signing/UrlValidationError;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningLink$Check$Valid : io/wsign/signing/SigningLink$Check {
+	public fun <init> (Lio/wsign/signing/SigningLink;)V
+	public final fun component1 ()Lio/wsign/signing/SigningLink;
+	public final fun copy (Lio/wsign/signing/SigningLink;)Lio/wsign/signing/SigningLink$Check$Valid;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningLink$Check$Valid;Lio/wsign/signing/SigningLink;ILjava/lang/Object;)Lio/wsign/signing/SigningLink$Check$Valid;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getLink ()Lio/wsign/signing/SigningLink;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningLink$Companion {
+	public final fun check (Ljava/lang/String;)Lio/wsign/signing/SigningLink$Check;
+	public final fun check (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)Lio/wsign/signing/SigningLink$Check;
+	public static synthetic fun check$default (Lio/wsign/signing/SigningLink$Companion;Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;ILjava/lang/Object;)Lio/wsign/signing/SigningLink$Check;
+	public final fun isValid (Ljava/lang/String;)Z
+	public final fun isValid (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)Z
+	public static synthetic fun isValid$default (Lio/wsign/signing/SigningLink$Companion;Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;ILjava/lang/Object;)Z
+	public final fun validate (Ljava/lang/String;)Lio/wsign/signing/SigningLink;
+	public final fun validate (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)Lio/wsign/signing/SigningLink;
+	public static synthetic fun validate$default (Lio/wsign/signing/SigningLink$Companion;Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;ILjava/lang/Object;)Lio/wsign/signing/SigningLink;
+}
+
+public final class io/wsign/signing/SigningLink$Kind : java/lang/Enum {
+	public static final field EMBEDDED_SESSION Lio/wsign/signing/SigningLink$Kind;
+	public static final field OTHER Lio/wsign/signing/SigningLink$Kind;
+	public static final field SIGNING_PAGE Lio/wsign/signing/SigningLink$Kind;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lio/wsign/signing/SigningLink$Kind;
+	public static fun values ()[Lio/wsign/signing/SigningLink$Kind;
+}
+
+public final class io/wsign/signing/SigningOutcome {
+	public fun <init> (Lio/wsign/signing/SigningOutcome$Detection;)V
+	public fun <init> (Lio/wsign/signing/SigningReference;Lio/wsign/signing/SigningOutcome$Detection;)V
+	public fun <init> (Lio/wsign/signing/SigningReference;Lio/wsign/signing/SigningOutcome$Detection;Ljava/lang/String;)V
+	public fun <init> (Lio/wsign/signing/SigningReference;Lio/wsign/signing/SigningOutcome$Detection;Ljava/lang/String;Z)V
+	public fun <init> (Lio/wsign/signing/SigningReference;Lio/wsign/signing/SigningOutcome$Detection;Ljava/lang/String;ZLjava/lang/String;)V
+	public synthetic fun <init> (Lio/wsign/signing/SigningReference;Lio/wsign/signing/SigningOutcome$Detection;Ljava/lang/String;ZLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lio/wsign/signing/SigningReference;
+	public final fun component2 ()Lio/wsign/signing/SigningOutcome$Detection;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Z
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Lio/wsign/signing/SigningReference;Lio/wsign/signing/SigningOutcome$Detection;Ljava/lang/String;ZLjava/lang/String;)Lio/wsign/signing/SigningOutcome;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningOutcome;Lio/wsign/signing/SigningReference;Lio/wsign/signing/SigningOutcome$Detection;Ljava/lang/String;ZLjava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/SigningOutcome;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDetection ()Lio/wsign/signing/SigningOutcome$Detection;
+	public final fun getReason ()Ljava/lang/String;
+	public final fun getReference ()Lio/wsign/signing/SigningReference;
+	public final fun getReturnUrl ()Ljava/lang/String;
+	public final fun getWasAlreadyFinal ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningOutcome$Detection : java/lang/Enum {
+	public static final field PAGE_CONTENT Lio/wsign/signing/SigningOutcome$Detection;
+	public static final field PAGE_EVENT Lio/wsign/signing/SigningOutcome$Detection;
+	public static final field RETURN_URL Lio/wsign/signing/SigningOutcome$Detection;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lio/wsign/signing/SigningOutcome$Detection;
+	public static fun values ()[Lio/wsign/signing/SigningOutcome$Detection;
+}
+
+public final class io/wsign/signing/SigningPageState : java/lang/Enum {
+	public static final field ACCESS_CODE_REQUIRED Lio/wsign/signing/SigningPageState;
+	public static final field ALREADY_DECLINED Lio/wsign/signing/SigningPageState;
+	public static final field ALREADY_SIGNED Lio/wsign/signing/SigningPageState;
+	public static final field CANCELED Lio/wsign/signing/SigningPageState;
+	public static final field Companion Lio/wsign/signing/SigningPageState$Companion;
+	public static final field EXPIRED Lio/wsign/signing/SigningPageState;
+	public static final field IDENTITY_UNAVAILABLE Lio/wsign/signing/SigningPageState;
+	public static final field MISSING_TOKEN Lio/wsign/signing/SigningPageState;
+	public static final field NOT_FOUND Lio/wsign/signing/SigningPageState;
+	public static final field NOT_YOUR_TURN Lio/wsign/signing/SigningPageState;
+	public static final fun fromValue (Ljava/lang/String;)Lio/wsign/signing/SigningPageState;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getValue ()Ljava/lang/String;
+	public final fun isFinal ()Z
+	public static fun valueOf (Ljava/lang/String;)Lio/wsign/signing/SigningPageState;
+	public static fun values ()[Lio/wsign/signing/SigningPageState;
+}
+
+public final class io/wsign/signing/SigningPageState$Companion {
+	public final fun fromValue (Ljava/lang/String;)Lio/wsign/signing/SigningPageState;
+}
+
+public final class io/wsign/signing/SigningReference {
+	public static final field Companion Lio/wsign/signing/SigningReference$Companion;
+	public static final field UNKNOWN Lio/wsign/signing/SigningReference;
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lio/wsign/signing/SigningReference;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningReference;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/SigningReference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getSignatureRequestId ()Ljava/lang/String;
+	public final fun getSignerId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun isEmpty ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningReference$Companion {
+}
+
+public final class io/wsign/signing/SigningRequest {
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)V
+	public synthetic fun <init> (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getConfiguration ()Lio/wsign/signing/WsignSigningConfiguration;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class io/wsign/signing/SigningResult {
+	public static final field Companion Lio/wsign/signing/SigningResult$Companion;
+	public static final fun fromReturnUrl (Ljava/lang/String;)Lio/wsign/signing/SigningResult;
+	public fun getOutcome ()Lio/wsign/signing/SigningOutcome;
+	public final fun isSigned ()Z
+}
+
+public final class io/wsign/signing/SigningResult$Canceled : io/wsign/signing/SigningResult {
+	public static final field INSTANCE Lio/wsign/signing/SigningResult$Canceled;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningResult$Companion {
+	public final fun fromReturnUrl (Ljava/lang/String;)Lio/wsign/signing/SigningResult;
+}
+
+public final class io/wsign/signing/SigningResult$Declined : io/wsign/signing/SigningResult {
+	public fun <init> (Lio/wsign/signing/SigningOutcome;)V
+	public final fun component1 ()Lio/wsign/signing/SigningOutcome;
+	public final fun copy (Lio/wsign/signing/SigningOutcome;)Lio/wsign/signing/SigningResult$Declined;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningResult$Declined;Lio/wsign/signing/SigningOutcome;ILjava/lang/Object;)Lio/wsign/signing/SigningResult$Declined;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getOutcome ()Lio/wsign/signing/SigningOutcome;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningResult$Expired : io/wsign/signing/SigningResult {
+	public static final field INSTANCE Lio/wsign/signing/SigningResult$Expired;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningResult$Failed : io/wsign/signing/SigningResult {
+	public fun <init> (Lio/wsign/signing/WsignSigningError;)V
+	public final fun component1 ()Lio/wsign/signing/WsignSigningError;
+	public final fun copy (Lio/wsign/signing/WsignSigningError;)Lio/wsign/signing/SigningResult$Failed;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningResult$Failed;Lio/wsign/signing/WsignSigningError;ILjava/lang/Object;)Lio/wsign/signing/SigningResult$Failed;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getError ()Lio/wsign/signing/WsignSigningError;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/SigningResult$Signed : io/wsign/signing/SigningResult {
+	public fun <init> (Lio/wsign/signing/SigningOutcome;)V
+	public final fun component1 ()Lio/wsign/signing/SigningOutcome;
+	public final fun copy (Lio/wsign/signing/SigningOutcome;)Lio/wsign/signing/SigningResult$Signed;
+	public static synthetic fun copy$default (Lio/wsign/signing/SigningResult$Signed;Lio/wsign/signing/SigningOutcome;ILjava/lang/Object;)Lio/wsign/signing/SigningResult$Signed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getOutcome ()Lio/wsign/signing/SigningOutcome;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class io/wsign/signing/UrlValidationError {
+	public abstract fun getDescription ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/UrlValidationError$ContainsCredentials : io/wsign/signing/UrlValidationError {
+	public static final field INSTANCE Lio/wsign/signing/UrlValidationError$ContainsCredentials;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/UrlValidationError$HostNotAllowed : io/wsign/signing/UrlValidationError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/wsign/signing/UrlValidationError$HostNotAllowed;
+	public static synthetic fun copy$default (Lio/wsign/signing/UrlValidationError$HostNotAllowed;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/UrlValidationError$HostNotAllowed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getHost ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/UrlValidationError$Malformed : io/wsign/signing/UrlValidationError {
+	public static final field INSTANCE Lio/wsign/signing/UrlValidationError$Malformed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/UrlValidationError$MissingHost : io/wsign/signing/UrlValidationError {
+	public static final field INSTANCE Lio/wsign/signing/UrlValidationError$MissingHost;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/UrlValidationError$MissingToken : io/wsign/signing/UrlValidationError {
+	public static final field INSTANCE Lio/wsign/signing/UrlValidationError$MissingToken;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/UrlValidationError$MissingUrl : io/wsign/signing/UrlValidationError {
+	public static final field INSTANCE Lio/wsign/signing/UrlValidationError$MissingUrl;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/UrlValidationError$UnsupportedScheme : io/wsign/signing/UrlValidationError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/wsign/signing/UrlValidationError$UnsupportedScheme;
+	public static synthetic fun copy$default (Lio/wsign/signing/UrlValidationError$UnsupportedScheme;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/UrlValidationError$UnsupportedScheme;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getScheme ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigning {
+	public static final field API_VERSION Ljava/lang/String;
+	public static final field INSTANCE Lio/wsign/signing/WsignSigning;
+	public static final field PLATFORM_HOSTS Ljava/util/Set;
+	public static final field VERSION Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigning$Contract : androidx/activity/result/contract/ActivityResultContract {
+	public fun <init> ()V
+	public fun <init> (Lio/wsign/signing/SigningEventListener;)V
+	public synthetic fun <init> (Lio/wsign/signing/SigningEventListener;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun createIntent (Landroid/content/Context;Lio/wsign/signing/SigningRequest;)Landroid/content/Intent;
+	public synthetic fun createIntent (Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
+	public fun parseResult (ILandroid/content/Intent;)Lio/wsign/signing/SigningResult;
+	public synthetic fun parseResult (ILandroid/content/Intent;)Ljava/lang/Object;
+}
+
+public final class io/wsign/signing/WsignSigningActivity : androidx/fragment/app/FragmentActivity, io/wsign/signing/WsignSigningFragment$Listener {
+	public static final field Companion Lio/wsign/signing/WsignSigningActivity$Companion;
+	public fun <init> ()V
+	public static final fun createIntent (Landroid/content/Context;Lio/wsign/signing/SigningRequest;)Landroid/content/Intent;
+	public fun onSigningDismissRequested (Lio/wsign/signing/WsignSigningFragment;)V
+	public fun onSigningEvent (Lio/wsign/signing/WsignSigningFragment;Lio/wsign/signing/SigningEvent;)V
+	public fun onSigningResult (Lio/wsign/signing/WsignSigningFragment;Lio/wsign/signing/SigningResult;)V
+}
+
+public final class io/wsign/signing/WsignSigningActivity$Companion {
+	public final fun createIntent (Landroid/content/Context;Lio/wsign/signing/SigningRequest;)Landroid/content/Intent;
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration {
+	public static final field Companion Lio/wsign/signing/WsignSigningConfiguration$Companion;
+	public static final field DEFAULT Lio/wsign/signing/WsignSigningConfiguration;
+	public static final field DEFAULT_DISMISSAL_DELAY_MILLIS J
+	public static final field DEFAULT_TIMEOUT_MILLIS J
+	public static final field MAX_TIMEOUT_MILLIS J
+	public static final field MIN_TIMEOUT_MILLIS J
+	public synthetic fun <init> (Lio/wsign/signing/WsignSigningConfiguration$Builder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAllowedHosts ()Ljava/util/Set;
+	public final fun getAllowsInsecureLocalHosts ()Z
+	public final fun getAppearance ()Lio/wsign/signing/WsignSigningConfiguration$Appearance;
+	public final fun getDetectsPlatformReturnNavigation ()Z
+	public final fun getDismissal ()Lio/wsign/signing/WsignSigningConfiguration$Dismissal;
+	public final fun getIdentityVerification ()Lio/wsign/signing/WsignSigningConfiguration$IdentityVerificationPolicy;
+	public final fun getIdentityVerificationHosts ()Ljava/util/Set;
+	public final fun getLanguage ()Lio/wsign/signing/WsignSigningConfiguration$Language;
+	public final fun getReturnUrls ()Ljava/util/List;
+	public final fun getShowsCloseButton ()Z
+	public final fun getTimeoutMillis ()J
+	public final fun getUsesEphemeralWebsiteData ()Z
+	public fun hashCode ()I
+	public final fun isWebContentsDebuggingEnabled ()Z
+	public final fun newBuilder ()Lio/wsign/signing/WsignSigningConfiguration$Builder;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$Appearance {
+	public static final field Companion Lio/wsign/signing/WsignSigningConfiguration$Appearance$Companion;
+	public static final field DEFAULT Lio/wsign/signing/WsignSigningConfiguration$Appearance;
+	public synthetic fun <init> (Lio/wsign/signing/WsignSigningConfiguration$Appearance$Builder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getConfirmsBeforeClosing ()Z
+	public final fun getInterfaceStyle ()Lio/wsign/signing/WsignSigningConfiguration$InterfaceStyle;
+	public final fun getShowsHeader ()Z
+	public final fun getShowsProgressBar ()Z
+	public final fun getTintColor ()Lio/wsign/signing/SigningColor;
+	public final fun getTitle ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun newBuilder ()Lio/wsign/signing/WsignSigningConfiguration$Appearance$Builder;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$Appearance$Builder {
+	public fun <init> ()V
+	public final fun build ()Lio/wsign/signing/WsignSigningConfiguration$Appearance;
+	public final fun getConfirmsBeforeClosing ()Z
+	public final fun getInterfaceStyle ()Lio/wsign/signing/WsignSigningConfiguration$InterfaceStyle;
+	public final fun getShowsHeader ()Z
+	public final fun getShowsProgressBar ()Z
+	public final fun getTintColor ()Lio/wsign/signing/SigningColor;
+	public final fun getTitle ()Ljava/lang/String;
+	public final fun setConfirmsBeforeClosing (Z)V
+	public final fun setInterfaceStyle (Lio/wsign/signing/WsignSigningConfiguration$InterfaceStyle;)V
+	public final fun setShowsHeader (Z)V
+	public final fun setShowsProgressBar (Z)V
+	public final fun setTintColor (Lio/wsign/signing/SigningColor;)V
+	public final fun setTitle (Ljava/lang/String;)V
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$Appearance$Companion {
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$Builder {
+	public fun <init> ()V
+	public final fun addAllowedHost (Ljava/lang/String;)Lio/wsign/signing/WsignSigningConfiguration$Builder;
+	public final fun addIdentityVerificationHost (Ljava/lang/String;)Lio/wsign/signing/WsignSigningConfiguration$Builder;
+	public final fun addReturnUrl (Lio/wsign/signing/ReturnUrlPattern;)Z
+	public final fun addReturnUrl (Ljava/lang/String;)Z
+	public final fun appearance (Lkotlin/jvm/functions/Function1;)Lio/wsign/signing/WsignSigningConfiguration$Builder;
+	public final fun build ()Lio/wsign/signing/WsignSigningConfiguration;
+	public final fun getAllowedHosts ()Ljava/util/Set;
+	public final fun getAllowsInsecureLocalHosts ()Z
+	public final fun getAppearance ()Lio/wsign/signing/WsignSigningConfiguration$Appearance;
+	public final fun getDetectsPlatformReturnNavigation ()Z
+	public final fun getDismissal ()Lio/wsign/signing/WsignSigningConfiguration$Dismissal;
+	public final fun getIdentityVerification ()Lio/wsign/signing/WsignSigningConfiguration$IdentityVerificationPolicy;
+	public final fun getIdentityVerificationHosts ()Ljava/util/Set;
+	public final fun getLanguage ()Lio/wsign/signing/WsignSigningConfiguration$Language;
+	public final fun getReturnUrls ()Ljava/util/List;
+	public final fun getShowsCloseButton ()Z
+	public final fun getTimeoutMillis ()J
+	public final fun getUsesEphemeralWebsiteData ()Z
+	public final fun isWebContentsDebuggingEnabled ()Z
+	public final fun setAllowedHosts (Ljava/util/Set;)V
+	public final fun setAllowsInsecureLocalHosts (Z)V
+	public final fun setAppearance (Lio/wsign/signing/WsignSigningConfiguration$Appearance;)V
+	public final fun setDetectsPlatformReturnNavigation (Z)V
+	public final fun setDismissal (Lio/wsign/signing/WsignSigningConfiguration$Dismissal;)V
+	public final fun setIdentityVerification (Lio/wsign/signing/WsignSigningConfiguration$IdentityVerificationPolicy;)V
+	public final fun setIdentityVerificationHosts (Ljava/util/Set;)V
+	public final fun setLanguage (Lio/wsign/signing/WsignSigningConfiguration$Language;)V
+	public final fun setReturnUrls (Ljava/util/List;)V
+	public final fun setShowsCloseButton (Z)V
+	public final fun setTimeoutMillis (J)V
+	public final fun setUsesEphemeralWebsiteData (Z)V
+	public final fun setWebContentsDebuggingEnabled (Z)V
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$Companion {
+}
+
+public abstract class io/wsign/signing/WsignSigningConfiguration$Dismissal {
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$Dismissal$Automatic : io/wsign/signing/WsignSigningConfiguration$Dismissal {
+	public fun <init> ()V
+	public fun <init> (J)V
+	public synthetic fun <init> (JILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDelayMillis ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$Dismissal$Manual : io/wsign/signing/WsignSigningConfiguration$Dismissal {
+	public static final field INSTANCE Lio/wsign/signing/WsignSigningConfiguration$Dismissal$Manual;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$IdentityVerificationPolicy : java/lang/Enum {
+	public static final field FOLLOW_PLATFORM Lio/wsign/signing/WsignSigningConfiguration$IdentityVerificationPolicy;
+	public static final field LISTED_HOSTS_ONLY Lio/wsign/signing/WsignSigningConfiguration$IdentityVerificationPolicy;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/wsign/signing/WsignSigningConfiguration$IdentityVerificationPolicy;
+	public static fun values ()[Lio/wsign/signing/WsignSigningConfiguration$IdentityVerificationPolicy;
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$InterfaceStyle : java/lang/Enum {
+	public static final field DARK Lio/wsign/signing/WsignSigningConfiguration$InterfaceStyle;
+	public static final field LIGHT Lio/wsign/signing/WsignSigningConfiguration$InterfaceStyle;
+	public static final field SYSTEM Lio/wsign/signing/WsignSigningConfiguration$InterfaceStyle;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/wsign/signing/WsignSigningConfiguration$InterfaceStyle;
+	public static fun values ()[Lio/wsign/signing/WsignSigningConfiguration$InterfaceStyle;
+}
+
+public final class io/wsign/signing/WsignSigningConfiguration$Language : java/lang/Enum {
+	public static final field ARABIC Lio/wsign/signing/WsignSigningConfiguration$Language;
+	public static final field AUTOMATIC Lio/wsign/signing/WsignSigningConfiguration$Language;
+	public static final field ENGLISH Lio/wsign/signing/WsignSigningConfiguration$Language;
+	public final fun getCode ()Ljava/lang/String;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/wsign/signing/WsignSigningConfiguration$Language;
+	public static fun values ()[Lio/wsign/signing/WsignSigningConfiguration$Language;
+}
+
+public final class io/wsign/signing/WsignSigningConfigurationKt {
+	public static final fun WsignSigningConfiguration (Lkotlin/jvm/functions/Function1;)Lio/wsign/signing/WsignSigningConfiguration;
+}
+
+public abstract class io/wsign/signing/WsignSigningError {
+	public static final field ERROR_HOST_LOOKUP I
+	public abstract fun getDescription ()Ljava/lang/String;
+	public final fun isOffline ()Z
+	public final fun isRetryable ()Z
+}
+
+public final class io/wsign/signing/WsignSigningError$HttpStatus : io/wsign/signing/WsignSigningError {
+	public fun <init> (I)V
+	public final fun component1 ()I
+	public final fun copy (I)Lio/wsign/signing/WsignSigningError$HttpStatus;
+	public static synthetic fun copy$default (Lio/wsign/signing/WsignSigningError$HttpStatus;IILjava/lang/Object;)Lio/wsign/signing/WsignSigningError$HttpStatus;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getStatus ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningError$InvalidUrl : io/wsign/signing/WsignSigningError {
+	public fun <init> (Lio/wsign/signing/UrlValidationError;)V
+	public final fun component1 ()Lio/wsign/signing/UrlValidationError;
+	public final fun copy (Lio/wsign/signing/UrlValidationError;)Lio/wsign/signing/WsignSigningError$InvalidUrl;
+	public static synthetic fun copy$default (Lio/wsign/signing/WsignSigningError$InvalidUrl;Lio/wsign/signing/UrlValidationError;ILjava/lang/Object;)Lio/wsign/signing/WsignSigningError$InvalidUrl;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getReason ()Lio/wsign/signing/UrlValidationError;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningError$LinkUnavailable : io/wsign/signing/WsignSigningError {
+	public fun <init> (Lio/wsign/signing/SigningPageState;)V
+	public final fun component1 ()Lio/wsign/signing/SigningPageState;
+	public final fun copy (Lio/wsign/signing/SigningPageState;)Lio/wsign/signing/WsignSigningError$LinkUnavailable;
+	public static synthetic fun copy$default (Lio/wsign/signing/WsignSigningError$LinkUnavailable;Lio/wsign/signing/SigningPageState;ILjava/lang/Object;)Lio/wsign/signing/WsignSigningError$LinkUnavailable;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getState ()Lio/wsign/signing/SigningPageState;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningError$Network : io/wsign/signing/WsignSigningError {
+	public fun <init> (ILjava/lang/String;)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (ILjava/lang/String;)Lio/wsign/signing/WsignSigningError$Network;
+	public static synthetic fun copy$default (Lio/wsign/signing/WsignSigningError$Network;ILjava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/WsignSigningError$Network;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCode ()I
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getMessage ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningError$PageError : io/wsign/signing/WsignSigningError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/wsign/signing/WsignSigningError$PageError;
+	public static synthetic fun copy$default (Lio/wsign/signing/WsignSigningError$PageError;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/WsignSigningError$PageError;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getReason ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningError$TimedOut : io/wsign/signing/WsignSigningError {
+	public static final field INSTANCE Lio/wsign/signing/WsignSigningError$TimedOut;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningError$UnexpectedReturnStatus : io/wsign/signing/WsignSigningError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/wsign/signing/WsignSigningError$UnexpectedReturnStatus;
+	public static synthetic fun copy$default (Lio/wsign/signing/WsignSigningError$UnexpectedReturnStatus;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/WsignSigningError$UnexpectedReturnStatus;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getStatus ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningError$WebContentTerminated : io/wsign/signing/WsignSigningError {
+	public static final field INSTANCE Lio/wsign/signing/WsignSigningError$WebContentTerminated;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/wsign/signing/WsignSigningFileProvider : androidx/core/content/FileProvider {
+	public fun <init> ()V
+}
+
+public final class io/wsign/signing/WsignSigningFragment : androidx/fragment/app/Fragment {
+	public static final field BACK_STACK_NAME Ljava/lang/String;
+	public static final field Companion Lio/wsign/signing/WsignSigningFragment$Companion;
+	public static final field REQUEST_KEY Ljava/lang/String;
+	public static final field RESULT_KEY Ljava/lang/String;
+	public fun <init> ()V
+	public final fun cancel ()V
+	public final fun dismissFromContainer ()V
+	public final fun getConfiguration ()Lio/wsign/signing/WsignSigningConfiguration;
+	public final fun getListener ()Lio/wsign/signing/WsignSigningFragment$Listener;
+	public final fun getResult ()Lio/wsign/signing/SigningResult;
+	public final fun getUrl ()Ljava/lang/String;
+	public static final fun newInstance (Ljava/lang/String;)Lio/wsign/signing/WsignSigningFragment;
+	public static final fun newInstance (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)Lio/wsign/signing/WsignSigningFragment;
+	public static final fun newInstance (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;Ljava/lang/String;)Lio/wsign/signing/WsignSigningFragment;
+	public fun onCreate (Landroid/os/Bundle;)V
+	public fun onCreateView (Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+	public fun onDestroy ()V
+	public fun onDestroyView ()V
+	public fun onSaveInstanceState (Landroid/os/Bundle;)V
+	public fun onViewCreated (Landroid/view/View;Landroid/os/Bundle;)V
+	public final fun reload ()V
+	public static final fun resultFrom (Landroid/os/Bundle;)Lio/wsign/signing/SigningResult;
+	public final fun setListener (Lio/wsign/signing/WsignSigningFragment$Listener;)V
+}
+
+public final class io/wsign/signing/WsignSigningFragment$Companion {
+	public final fun newInstance (Ljava/lang/String;)Lio/wsign/signing/WsignSigningFragment;
+	public final fun newInstance (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)Lio/wsign/signing/WsignSigningFragment;
+	public final fun newInstance (Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;Ljava/lang/String;)Lio/wsign/signing/WsignSigningFragment;
+	public static synthetic fun newInstance$default (Lio/wsign/signing/WsignSigningFragment$Companion;Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;Ljava/lang/String;ILjava/lang/Object;)Lio/wsign/signing/WsignSigningFragment;
+	public final fun resultFrom (Landroid/os/Bundle;)Lio/wsign/signing/SigningResult;
+}
+
+public abstract interface class io/wsign/signing/WsignSigningFragment$Listener {
+	public fun onSigningDismissRequested (Lio/wsign/signing/WsignSigningFragment;)V
+	public fun onSigningEvent (Lio/wsign/signing/WsignSigningFragment;Lio/wsign/signing/SigningEvent;)V
+	public abstract fun onSigningResult (Lio/wsign/signing/WsignSigningFragment;Lio/wsign/signing/SigningResult;)V
+	public fun shouldOpenExternalUrl (Lio/wsign/signing/WsignSigningFragment;Ljava/lang/String;)Z
+}
+
+public final class io/wsign/signing/WsignSigningKt {
+	public static final fun launch (Landroidx/activity/result/ActivityResultLauncher;Ljava/lang/String;)V
+	public static final fun launch (Landroidx/activity/result/ActivityResultLauncher;Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;)V
+	public static synthetic fun launch$default (Landroidx/activity/result/ActivityResultLauncher;Ljava/lang/String;Lio/wsign/signing/WsignSigningConfiguration;ILjava/lang/Object;)V
+}
+
